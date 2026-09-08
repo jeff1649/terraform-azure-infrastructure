@@ -1,5 +1,5 @@
 module "resource_group" {
-  source = "git::https://github.com/jeff1649/azurerm-resource-group.git?ref=v1.0.0"
+  source = "git::https://github.com/jeff1649/azurerm-resource-group.git?ref=v1.1.0"
 
   app_abbreviation = var.app_abbreviation
   environment      = var.environment
