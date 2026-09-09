@@ -10,7 +10,7 @@ module "resource_group" {
 }
 
 module "storage_account" {
-  source = "git::https://github.com/jeff1649/azurerm-storage-account.git?ref=v1.0.0"
+  source = "git::https://github.com/jeff1649/azurerm-storage-account.git?ref=v1.0.1"
 
   app_abbreviation    = var.app_abbreviation
   environment         = var.environment
