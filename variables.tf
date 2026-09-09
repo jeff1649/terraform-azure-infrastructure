@@ -29,3 +29,9 @@ variable "tags" {
   type        = map(string)
   default     = {}
 }
+
+variable "storage_account_instance" {
+  description = "Instance number for the storage account."
+  type        = number
+  default     = 1
+}

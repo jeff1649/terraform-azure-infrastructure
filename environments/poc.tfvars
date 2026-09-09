@@ -9,3 +9,6 @@ tags = {
   environment = "poc"
   managed_by  = "terraform"
 }
+
+# Storage Account
+storage_account_instance = 1
