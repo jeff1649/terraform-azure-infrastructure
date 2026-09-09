@@ -35,3 +35,31 @@ variable "storage_account_instance" {
   type        = number
   default     = 1
 }
+
+variable "vnet_instance" {
+  description = "Instance number for the virtual network."
+  type        = number
+  default     = 1
+}
+
+variable "vnet_address_space" {
+  description = "Address space assigned to the virtual network."
+  type        = list(string)
+}
+
+variable "subnets" {
+  description = "Subnets to create in the virtual network."
+
+  type = map(object({
+    purpose          = string
+    instance         = optional(number, 1)
+    address_prefixes = list(string)
+
+    private_endpoint_network_policies = optional(string, "Enabled")
+
+    delegations = optional(map(object({
+      name    = string
+      actions = optional(list(string), [])
+    })), {})
+  }))
+}

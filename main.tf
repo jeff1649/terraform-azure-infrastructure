@@ -21,3 +21,19 @@ module "storage_account" {
   shared_access_key_enabled = false
   tags                      = var.tags
 }
+
+module "networking" {
+  source = "git::https://github.com/jeff1649/azurerm-networking.git?ref=main"
+
+  app_abbreviation    = var.app_abbreviation
+  environment         = var.environment
+  subscription        = var.subscription
+  instance            = var.vnet_instance
+  location            = var.location
+  resource_group_name = module.resource_group.name
+
+  address_space = var.vnet_address_space
+  subnets       = var.subnets
+
+  tags = var.tags
+}
